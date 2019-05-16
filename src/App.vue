@@ -1,20 +1,21 @@
 <template>
   <div id="app">
+    <component :is="layout"></component>    
     <header>
-      <b-navbar toggleable="md" type="light" variant="light">
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-navbar-brand to="/">Food Tracker</b-navbar-brand>
-        <b-collapse is-nav id="nav-collapse">
-          <b-navbar-nav>
-            <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
-            <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
-            <b-nav-item to="/Jesus">Jesús</b-nav-item>
-            <b-nav-item to="/component1">Comp1</b-nav-item>
-            <b-nav-item to="/apitest">Api test</b-nav-item>
-            <b-button variant="outline-primary" :to="{ name: 'Jesus', params: { id: 123 } }">To Jesús as well</b-button>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
+        <b-navbar toggleable="md" type="light" variant="light">
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-navbar-brand to="/">Food Tracker</b-navbar-brand>
+          <b-collapse is-nav id="nav-collapse">
+            <b-navbar-nav>
+              <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
+              <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
+              <b-nav-item to="/Jesus">Jesús</b-nav-item>
+              <b-nav-item to="/component1">Comp1</b-nav-item>
+              <b-nav-item to="/apitest">Api test</b-nav-item>
+              <b-button variant="outline-primary" :to="{ name: 'Jesus', params: { id: 123 } }">To Jesús as well</b-button>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
     </header>
     <main>
       <router-view></router-view>
@@ -24,7 +25,14 @@
 
 <script>
   // imports
+  import Vue from 'vue'
   import AppEvents from  './event';
+  import BackendLayout from './layouts/backend';
+  import DefaultLayout from './layouts/default';
+
+  Vue.component('backend-layout', BackendLayout);
+  Vue.component('default-layout', DefaultLayout);
+  const default_layout = 'default';
 
   export default {
     name: 'app',
@@ -48,6 +56,12 @@
       });
       window.getApp = this;
     },
+    computed: {
+      // see: https://itnext.io/anyway-heres-how-to-create-a-multiple-layout-system-with-vue-and-vue-router-b379baa91a05
+      layout() {
+        return (this.$route.meta.layout || default_layout) + '-layout';
+      }
+    }
   }
 
 </script>

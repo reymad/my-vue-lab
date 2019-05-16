@@ -13,6 +13,7 @@ export default [
       {
         path: '/jesus/:id?', // Para recoger este parametro p.ej: this.$route.params.id en algún componente
         name: 'Jesus',
+        meta: { layout: 'backend'},
         component: Jesus
       },
       {
