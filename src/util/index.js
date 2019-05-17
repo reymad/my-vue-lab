@@ -1,3 +1,6 @@
+/////////////////
+// filter pipes
+////////////////
 
 // export function camel (str) {
 //   const camel = (str || '').replace(/-([^-])/g, g => g[1].toUpperCase());
@@ -13,11 +16,10 @@
 //   return (str || '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 // }
 
-// export function capitalize (str) {
-//   str = str || '';
-
-//   return `${str.substr(0, 1).toUpperCase()}${str.slice(1)}`;
-// }
+export function capitalize (str) {
+   str = str || '';
+   return `${str.substr(0, 1).toUpperCase()}${str.slice(1)}`;
+}
 
 // export function findProduct (store, id) {
 //   return store.state.store.products.find(p => p.id === id);
@@ -29,20 +31,19 @@
 //   });
 // }
 
-// export function randomNumber (min, max) {
-//   return Math.floor(Math.random() * max) + min;
-// }
+export function randomNumber (min, max) {
+  return Math.floor(Math.random() * max) + min;
+}
 
-// export function randomString (length = 5) {
-//   let text = '';
-//   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+export function randomString (length = 5) {
+  let text = '';
+  const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
 
-//   for (let i = 0; i < length; i++) {
-//     text += possible.charAt(Math.floor(Math.random() * possible.length));
-//   }
-
-//   return text;
-// }
 const jesusTest = () => {
     console.log('Util::jesusTest > It works!');
     // this.$toastr.success('Esto marcha :-)', 'Title', {timeOut: 5000});
@@ -72,9 +73,12 @@ const toggleFullScreen = () => {
     }
 };
 
-  export default {
+export default {
     randomElement,
     toggleFullScreen,
     kebab,
+    randomString,
+    randomString,
+    capitalize,
     jesusTest
-  };
+};

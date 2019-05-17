@@ -1,0 +1,8 @@
+{
+    "en_us": "English (US)",
+    "hello": "Hello {0} i18n in SFC!",
+    "welcome": "Welcome!",
+    "yes-button": "Yes",
+    "no-button": "No!",
+    "Language changed": "Language changed to '({0})'"
+}

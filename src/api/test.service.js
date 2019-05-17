@@ -6,11 +6,13 @@ import Axios from 'axios';
 // and
 // https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
 
-const RESOURCE_NAME = '/owner';
- 
+// const RESOURCE_NAME = '/owner';
+
+const API_BASEURL = 'https://api.coindesk.com/v1/bpi';
+
 export default {
   getAll() {
-    return Axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+    return Axios.get(`${API_BASEURL}/currentprice.json`);
   },
   // ejemplos
   get(id) {

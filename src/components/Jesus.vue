@@ -7,6 +7,8 @@
     <b-button variant="outline-primary" @click="testGlobalEvent" > Test Global event</b-button> 
     <br />
     <b-button variant="outline-success" @click="handleFullScreen" > toggle full screen</b-button> 
+    <br />
+    <b-button variant="outline-warning" @click="kebab" > Kebab something </b-button> 
   </div>
 </template>
 
@@ -19,19 +21,27 @@ export default {
   data () {
 	  return {
           title: 'Let\'s see what this is',
-          text: 'waiting...'
+          text: 'Waiting...'
 	  }
   },
   methods:{
       jesusSalutes(){
-          alert('Jesus says Hi yo!')
+          alert('Jesus says Hi yo!' + Util.randomString())
+          alert(process.env.SENDGRID_API_KEY);
+          alert(process.env.NODE_ENV);
       },
       testGlobalEvent(){
           window.getApp.$emit('APP_TEST_EVENT');// ejemplo de utilización de eventos globales definidos en event.js
+          
       },
       handleFullScreen () {
         Util.toggleFullScreen(); // test utils
         Util.jesusTest();
+      },
+      kebab(){
+        this.$toastr.success(Util.kebab('SomethingToKebab'), '', { timeOut:0, extendedTimeOut: 0});
+        this.$toastr.error(Util.kebab('something to kebab'));
+        this.$toastr.error(Util.kebab('somethingtokebab'));
       }
   },
   created() {
@@ -51,7 +61,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="css">
 h1, h2 {
   font-weight: normal;
 }

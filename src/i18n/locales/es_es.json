@@ -1,0 +1,8 @@
+{
+    "es_es": "Español (ES)",
+    "hello": "Hola {0} i18n en SFC!",
+    "welcome": "Bienvenido!",
+    "yes-button": "Si",
+    "no-button": "No!",
+    "Language changed": "Idioma cambiado a '({0})'"
+}
