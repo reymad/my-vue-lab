@@ -4,15 +4,15 @@
     <header>
         <b-navbar toggleable="md" type="light" variant="light">
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-          <b-navbar-brand to="/">Food Tracker</b-navbar-brand>
+          <b-navbar-brand to="/"><img src="/static/gif/lovely-cat.gif" alt=""/></b-navbar-brand>
           <b-collapse is-nav id="nav-collapse">
             <b-navbar-nav>
               <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
               <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
-              <b-nav-item to="/Jesus">{{ $t("hello", ["Jesús"]) }}</b-nav-item>
+              <b-nav-item to="/jesus">{{ $t("hello", ["Jesús"]) }}</b-nav-item>
               <b-nav-item to="/component1">Comp1</b-nav-item>
               <b-nav-item to="/apitest">Api test</b-nav-item>
-              <b-button variant="outline-primary" :to="{ name: 'Jesus', params: { id: 123 } }">To Jesús as well</b-button>
+              <b-button variant="outline-primary" :to="{ name: 'jesus', params: { id: 123 } }">To Jesús as well</b-button>
               <!--n18i component-->
               <locale-changer></locale-changer>
 
@@ -40,7 +40,7 @@
   Vue.component('default-layout', DefaultLayout);
   const default_layout = 'default';
 
-  // Inside console.log(window.getApp)
+  // Inside console.log(window.getApp.$appInfo)
   Vue.prototype.$appInfo = 
   {
       ip: 'todo:ip',

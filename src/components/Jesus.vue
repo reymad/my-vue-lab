@@ -9,6 +9,13 @@
     <b-button variant="outline-success" @click="handleFullScreen" > toggle full screen</b-button> 
     <br />
     <b-button variant="outline-warning" @click="kebab" > Kebab something </b-button> 
+    <div>
+      <p>Pluralization: </p>
+      <p>{{ $tc('apple', 10, { count: 10 }) }}</p>
+      <p>{{ $tc('car' , 1) }}</p>
+      <p>{{ $tc('test | tests' , 1) }}</p>
+      <p>{{ $tc("This is a {count} | This are a {count} | This are a lot of {count}", 12 , { count: 12 } ) }}</p>
+    </div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <v-app id="404">
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center row>
+  <div id="404">
+      <div fluid fill-height>
+        <div align-center justify-center row>
           <div class="mr-3 hidden-sm-and-down">
             <img src="/static/error/500.svg" alt="">
           </div>
@@ -9,12 +9,12 @@
             <h1>500</h1>
             <h2 class="my-3 headline ">Sorry, the server is down.</h2>
             <div>
-              <v-btn color="primary" @click="goHome">Go Home</v-btn>
+              <b-btn color="primary" @click="goHome">Go home</b-btn>
             </div>  
           </div>
-        </v-layout>
-      </v-container>
-  </v-app>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>

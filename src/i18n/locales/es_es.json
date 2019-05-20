@@ -4,5 +4,9 @@
     "welcome": "Bienvenido!",
     "yes-button": "Si",
     "no-button": "No!",
-    "Language changed": "Idioma cambiado a '({0})'"
+    "Language changed": "Idioma cambiado a '({0})'",
+    "apple": "No hay manzanas | Dos manzanas | {count} manzanas",
+    "car": "Coche | Coches",
+    "test | tests": "Prueba | Pruebas",
+    "This is a {count} | This are a {count} | This are a lot of {count}": "Esto es una {count} | Estos son unos {count} | Estos son un montón de {count}"
 }

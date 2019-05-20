@@ -1,18 +1,18 @@
 <template>
-  <v-app id="404">
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
+  <div id="404">
+      <div fluid fill-height>
+        <div align-center justify-center>
           <div class="text-md-center">
             <h1>404</h1>
-            <h2 class="my-3 headline ">Sorry, page not found</h2>
+            <h2 class="my-3 headline">Sorry, page not found</h2>
             <div>
-              <b-btn color="primary" @click="goHome">Go Home</b-btn>
+              <b-btn color="primary" @click="goHome">Go home</b-btn>
               <!-- <b-button variant="outline-secondary" @click="goHome">Go Home </b-button> -->
             </div>  
           </div>
-        </v-layout>
-      </v-container>
-  </v-app>
+        </div>
+      </div>
+  </div>
 </template>
 
 <script>
