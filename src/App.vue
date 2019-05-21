@@ -1,30 +1,44 @@
 <template>
   <div id="app">
-    <component :is="layout"></component>    
-    <header>
-        <b-navbar toggleable="md" type="light" variant="light">
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-          <b-navbar-brand to="/"><img src="/static/gif/lovely-cat.gif" alt=""/></b-navbar-brand>
-          <b-collapse is-nav id="nav-collapse">
-            <b-navbar-nav>
-              <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
-              <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
-              <b-nav-item to="/jesus">{{ $t("hello", ["Jesús"]) }}</b-nav-item>
-              <b-nav-item to="/component1">Comp1</b-nav-item>
-              <b-nav-item to="/apitest">Api test</b-nav-item>
-              <b-button variant="outline-primary" :to="{ name: 'jesus', params: { id: 123 } }">To Jesús as well</b-button>
-              <!--n18i component-->
-              <locale-changer></locale-changer>
+    <component :is="layout">
+      <!-- default | backend | none (-layouts)-->
+      
+      <div v-if="this.$route.meta.public">
+        Public content
+      </div>
+      <div v-else>
+        Private content
+      </div>  
+      <header v-if="this.$route.meta.layout!='none'">
+          <b-navbar toggleable="md" type="light" variant="light">
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            <b-navbar-brand to="/"><img src="/static/gif/lovely-cat.gif" alt=""/></b-navbar-brand>
+            <b-collapse is-nav id="nav-collapse">
+              <b-navbar-nav>
+                <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
+                <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
+                <b-nav-item to="/jesus">{{ $t("hello", ["Jesús"]) }}</b-nav-item>
+                <b-nav-item to="/component1">Comp1</b-nav-item>
+                <b-nav-item to="/apitest">Api test</b-nav-item>
+                <b-button variant="outline-primary" :to="{ name: 'jesus', params: { id: 123 } }">To Jesús as well</b-button>
+                <!--n18i component-->
+                <locale-changer></locale-changer>
 
-            </b-navbar-nav>
-          </b-collapse>
-          
-        </b-navbar>
-    </header>
-    <main>
-      <router-view></router-view>
-    </main>
-  </div>
+              </b-navbar-nav>
+            </b-collapse>
+          </b-navbar>
+      </header>
+
+      <main>
+        <router-view></router-view>
+      </main>
+
+      <footer>
+        <div> I am a footer</div>
+      </footer>
+
+    </component>  
+  </div><!-- fin app-->
 </template>
 
 <script>
@@ -33,11 +47,13 @@
   import AppEvents from  './event';
   import BackendLayout from './layouts/backend';
   import DefaultLayout from './layouts/default';
+  import NoneLayout from './layouts/none';
   import LocaleChanger from './components/Localechanger';
 
 
   Vue.component('backend-layout', BackendLayout);
   Vue.component('default-layout', DefaultLayout);
+  Vue.component('none-layout', NoneLayout);
   const default_layout = 'default';
 
   // Inside console.log(window.getApp.$appInfo)
@@ -83,7 +99,7 @@
     computed: {
       // see: https://itnext.io/anyway-heres-how-to-create-a-multiple-layout-system-with-vue-and-vue-router-b379baa91a05
       layout() {
-        return (this.$route.meta.layout || default_layout) + '-layout';
+        return ( (this.$route.meta.layout) || default_layout) + '-layout';
       }
     }
   }

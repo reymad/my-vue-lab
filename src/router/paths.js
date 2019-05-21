@@ -10,13 +10,15 @@ export default [
       public: true,
     },
     redirect: {
-      path: '/404'
+      path: '/404',
+      
     }
   },  
   {
     path: '/404',
     meta: {
       public: true,
+      layout: 'none'
     },
     name: 'NotFound',
     component: () => import(
@@ -28,6 +30,7 @@ export default [
     path: '/403',
     meta: {
       public: true,
+      layout: 'none'
     },
     name: 'AccessDenied',
     component: () => import(
@@ -39,6 +42,7 @@ export default [
     path: '/500',
     meta: {
       public: true,
+      layout: 'none'
     },
     name: 'ServerError',
     component: () => import(
@@ -49,22 +53,35 @@ export default [
   {
       path: '/',
       name: 'Hello',
+      meta: {
+        public: true,
+      },
       component: Hello
     },
     {
       path: '/jesus/:id?', // Para recoger este parametro p.ej: this.$route.params.id en algún componente
       name: 'jesus',
-      meta: { layout: 'backend'},
+      meta: { 
+        layout: 'backend', 
+        public: false
+      },
       component: Jesus
     },
     {
       path: '/component1',
       name: 'component1',
+      meta: {
+        public: true,
+      },
       component: Comp1
     },
     {
       path: '/apitest',
       name: 'apitest',
+      meta: { 
+        layout: 'backend', 
+        public: false
+      },
       component: ApiTest
     }
 
