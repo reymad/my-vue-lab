@@ -30,6 +30,9 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
+// Vuetify
+import './plugins/vuetify.js'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
