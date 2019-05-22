@@ -3,9 +3,11 @@
 import Vue from 'vue';
 import App from './App';
 
+// eliminar a futuro, usamos vuetify instead
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 import router from './router';
 import store from "./store";
 
@@ -23,9 +25,21 @@ import './mixins/index.js';
 // Translations
 import i18n from './i18n/i18n.js'
 
+const rtl = false;
+// accessing vuetify instance in any vue app scope, i.e, changing rtl dynamically
+Vue.prototype.$vuetify.rtl = rtl;
+
 window.toastr = require('toastr')
 
-Vue.use(VueToastr2)
+Vue.use(VueToastr2, {
+  prventDuplicates: true,
+  timeout: 3000,
+  extendedTimeOut: 6000,
+  progressBar: true,
+  rtl: true,
+  escapeHtml : true,
+  positionClass: 'toast-bottom-left'
+})
 Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false

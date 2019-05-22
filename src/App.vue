@@ -1,50 +1,77 @@
 <template>
-  <v-app id="app">
-    <component :is="layout">
-      <!-- default | backend | none (-layouts)-->
-      
-      <div v-if="this.$route.meta.public">
-        Public content
-      </div>
-      <div v-else>
-        Private content
-      </div>  
-      <header v-if="this.$route.meta.layout!='none'">
-          <b-navbar toggleable="md" type="light" variant="light">
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-            <b-navbar-brand to="/"><img src="/static/gif/lovely-cat.gif" alt=""/></b-navbar-brand>
-            <b-collapse is-nav id="nav-collapse">
-              <b-navbar-nav>
-                <b-nav-item href="#" @click.prevent="login" v-if="!user">Login</b-nav-item>
-                <b-nav-item href="#" @click.prevent="logout" v-else>Logout</b-nav-item>
-                <b-nav-item to="/jesus">{{ $t("hello", ["Jesús"]) }}</b-nav-item>
-                <b-nav-item to="/component1">Comp1</b-nav-item>
-                <b-nav-item to="/apitest">Api test</b-nav-item>
-                <b-button variant="outline-primary" :to="{ name: 'jesus', params: { id: 123 } }">To Jesús as well</b-button>
-                <!--n18i component-->
-                <locale-changer></locale-changer>
+<!--https://github.com/vuetifyjs/vuetify/blob/master/packages/docs/src/examples/layouts/baseline.vue-->
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      app
+      dark
+    >
+      <v-list dense>
+        <v-list-tile @click="login">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="login">
+          <v-list-tile-action>
+            <v-icon>contact_mail</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Contact</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-              </b-navbar-nav>
-            </b-collapse>
-          </b-navbar>
-      </header>
+    <v-toolbar color="default" class="black--text" v-if="this.$route.meta.layout!='none'" fixed app>
+      <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title to="/">Application</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn flat class="info--text" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
+        <v-btn flat class="success--text" to="/component1">component 1</v-btn>
+        <v-btn flat class="warning--text" to="/apitest">Api test</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
 
-      <main>
-        <router-view></router-view>
-      </main>
-
-      <footer>
-        <div> I am a footer</div>
-        <div>
-          <v-btn color="success">Success</v-btn>
-          <v-btn color="error">Error</v-btn>
-          <v-btn color="warning">Warning</v-btn>
-          <v-btn color="info">Info</v-btn>
-        </div>
-      </footer>
-
-    </component>  
-  </v-app><!-- fin app-->
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout
+          justify-center
+          align-start
+        >
+        <router-view/>
+        <!--
+          <v-flex text-xs-center>
+            <v-tooltip left>
+              <template v-slot:activator="{ on }">
+                <v-btn :href="source" icon large target="_blank" v-on="on">
+                  <v-icon large>code</v-icon>
+                </v-btn>
+              </template>
+              <span>Source</span>
+            </v-tooltip>
+            <v-tooltip right>
+              <template v-slot:activator="{ on }">
+                <v-btn icon large href="https://codepen.io/johnjleider/pen/rJdVMq" target="_blank" v-on="on">
+                  <v-icon large>mdi-codepen</v-icon>
+                </v-btn>
+              </template>
+              <span>Codepen</span>
+            </v-tooltip>
+          </v-flex>
+        -->
+        </v-layout>
+      </v-container>
+    </v-content>
+    <v-footer color="default" app>
+      &nbsp;<span class="">&copy; {{ year }}</span>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
@@ -76,9 +103,12 @@
     name: 'app',
     data () {
       return {
-        user: null
+        user: null,
+        drawer: false,
+        year: new Date().getFullYear(),
       }
     },
+    // props: ['default'],
     components: {
       LocaleChanger,
     },
@@ -111,39 +141,3 @@
   }
 
 </script>
-
-<style>
-body {
-  margin: 0;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #f8f9fa;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
-</style>

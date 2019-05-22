@@ -4,7 +4,7 @@ import Vue from 'vue';
 Vue.mixin({
     data: function() {
       return {
-        app: {
+        test: {
             title: 'Soy el title',
         }
       }
