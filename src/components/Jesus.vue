@@ -8,7 +8,7 @@
     <br />
     <b-button variant="outline-success" @click="handleFullScreen" > toggle full screen</b-button> 
     <br />
-    <b-button variant="outline-warning" @click="kebab" > Kebab something </b-button> 
+    <b-button variant="outline-warning" @click="kebab" > Kebab something and change... </b-button> 
     <div>
       <p>Pluralization: </p>
       <p>{{ $tc('apple', 10, { count: 10 }) }}</p>
