@@ -1,21 +1,24 @@
 <template>
-  <div id="404">
-      <div fluid fill-height>
-        <div align-center justify-center row>
-          <div class="mr-3 hidden-sm-and-down">
+  <v-container bg fill-height grid-list-md text-xs-center>
+        <v-layout row wrap align-center>
+          <v-flex>
+            <!---->
+            <div id="500" class="mr-3 hidden-sm-and-down">
             <img src="/static/error/500.svg" alt="">
-          </div>
-          <div class="text-md-center">
-            <h1>500</h1>
-            <h2 class="my-3 headline ">Sorry, the server is down.</h2>
-            <div>
-              <b-btn color="primary" @click="goHome">Go home</b-btn>
-            </div>  
-          </div>
-        </div>
-      </div>
-  </div>
+            </div>
+            <div class="text-md-center">
+              <h1>500</h1>
+              <h2 class="my-3 headline ">Sorry, the server is down.</h2>
+              <div>
+                <v-btn flat color="secondary" @click="goHome">Go home</v-btn>
+              </div>  
+            </div>
+            <!---->
+          </v-flex>
+        </v-layout>
+ </v-container>
 </template>
+ 
 
 <script>
 export default {

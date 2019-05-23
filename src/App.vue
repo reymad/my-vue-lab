@@ -6,6 +6,7 @@
       fixed
       app
       dark
+      v-if="this.$route.meta.layout!='none'"
     >
       <v-list dense>
         <v-list-tile @click="login">
@@ -27,7 +28,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar color="default" class="black--text" v-if="this.$route.meta.layout!='none'" fixed app>
+    <v-toolbar color="elevation-0 default" class="black--text" v-if="this.$route.meta.layout!='none'" fixed app>
       <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title to="/">Application</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -141,3 +142,9 @@
   }
 
 </script>
+
+<style lang="css">
+html{
+  overflow-y: auto; /* overwrite from vuetify styles */
+}
+</style>

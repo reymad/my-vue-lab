@@ -11,11 +11,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import router from './router';
 import store from "./store";
 
-// npm's 
-// Toastr: https://www.npmjs.com/package/vue-toastr-2 | https://www.npmjs.com/package/toastr || https://github.com/CodeSeven/toastr (config documentation)
-import VueToastr2 from 'vue-toastr-2';
-import 'vue-toastr-2/dist/vue-toastr-2.min.css';
-
 // Global filters registration
 import './filters/index.js';
 
@@ -29,23 +24,16 @@ const rtl = false;
 // accessing vuetify instance in any vue app scope, i.e, changing rtl dynamically
 Vue.prototype.$vuetify.rtl = rtl;
 
-window.toastr = require('toastr')
-
-Vue.use(VueToastr2, {
-  prventDuplicates: true,
-  timeout: 3000,
-  extendedTimeOut: 6000,
-  progressBar: true,
-  rtl: true,
-  escapeHtml : true,
-  positionClass: 'toast-bottom-left'
-})
-Vue.use(BootstrapVue)
-
 Vue.config.productionTip = false
 
+Vue.use(BootstrapVue)
+
+// toastr
+import './plugins/toastr2.js'
 // Vuetify
 import './plugins/vuetify.js'
+
+import './stylus/main.styl'
 
 /* eslint-disable no-new */
 new Vue({

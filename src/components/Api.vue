@@ -13,14 +13,21 @@
       v-bind:key="currency.code"
       class="currency"
       >
-      {{ currency.description }}:
-      <span class="lighten">
-        <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
-      </span>
+        <v-layout row wrap>
+            <v-flex xs12>
+              <v-card>
+                  <v-card-title>
+                  <div>
+                    <span class="grey--text">{{ currency.description }}:</span><br>
+                    <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }} <br>
+                    <span v-if="info" class="text-primary">Timestamp: {{ info.time.updated }} </span> <br>
+                  </div>
+                  </v-card-title>
+                </v-card>
+            </v-flex>
+        </v-layout>
+      
     </div>
-
-    <p v-if="info" class="text-primary">Timestamp: {{ info.time.updated }} </p>
-
   </section>
 
 </div>

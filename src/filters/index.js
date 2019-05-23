@@ -7,6 +7,11 @@ Vue.filter('toUpper', value => {
   return value.toUpperCase();
 });
 
+// Capitalize first letter
+Vue.filter('capitalize', value => {
+    return value.charAt(0).toUpperCase() + value.slice(1);
+});
+
 // toLower
 Vue.filter('toLower', function (value) {
     return value.toLowerCase();
