@@ -82,7 +82,7 @@
   import BackendLayout from './layouts/backend';
   import DefaultLayout from './layouts/default';
   import NoneLayout from './layouts/none';
-  import LocalesChanger from './components/LocalesChanger';
+  import LocalesChanger from '@/components/LocalesChanger';
 
 
   Vue.component('backend-layout', BackendLayout);
