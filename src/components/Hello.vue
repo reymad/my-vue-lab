@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
 	<h1>{{ title }}</h1>
-	<h2>Take care of your daily calories intake</h2>
+	<h2>Welcome to Reymad</h2>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   data () {
 	  return {
-  	  title: 'Food Tracker Application'
+  	  title: 'My laboratory...'
 	  }
   }
 }
