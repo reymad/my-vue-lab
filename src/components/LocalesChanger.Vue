@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'LocaleChanger',
+  name: 'LocalesChanger',
   data () {
     return { langs: [
             { code: 'en_us', text: 'English (US)' },

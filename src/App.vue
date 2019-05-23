@@ -22,7 +22,7 @@
             <v-icon>contact_mail</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><LocaleChanger /></v-list-tile-title>
+            <v-list-tile-title><LocalesChanger /></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -82,7 +82,7 @@
   import BackendLayout from './layouts/backend';
   import DefaultLayout from './layouts/default';
   import NoneLayout from './layouts/none';
-  import LocaleChanger from './components/LocalesChanger';
+  import LocalesChanger from './components/LocalesChanger';
 
 
   Vue.component('backend-layout', BackendLayout);
@@ -111,7 +111,7 @@
     },
     // props: ['default'],
     components: {
-      LocaleChanger,
+      LocalesChanger,
     },
     // mixin: [Mixins],
     methods: {
