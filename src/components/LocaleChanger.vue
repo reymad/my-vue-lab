@@ -11,8 +11,8 @@
 </div>
 -->
 
-        <v-flex xs6 lg10>
-            
+        <v-flex xs8 lg8>
+
             <v-select
             v-model="$i18n.locale"
             item-text="text"

@@ -88,7 +88,7 @@
   import BackendLayout from './layouts/backend';
   import DefaultLayout from './layouts/default';
   import NoneLayout from './layouts/none';
-  import LanguageSwipper from './components/LanguageSwipper';
+  import LanguageSwipper from '@/components/LanguageSwipper';
 
 
   Vue.component('backend-layout', BackendLayout);
