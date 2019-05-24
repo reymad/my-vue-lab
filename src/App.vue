@@ -74,7 +74,7 @@
     <v-footer color="default" height="60px" app>
       &nbsp;<span class="">&copy; {{ year }}</span>
       <v-spacer></v-spacer>
-      <span><LanguageSwipper /> </span>
+      <span><LocaleChanger /> </span>
       <br />
     </v-footer>
 
@@ -88,7 +88,7 @@
   import BackendLayout from './layouts/backend';
   import DefaultLayout from './layouts/default';
   import NoneLayout from './layouts/none';
-  import LanguageSwipper from '@/components/LanguageSwipper';
+  import LocaleChanger from '@/components/LocaleChanger';
 
 
   Vue.component('backend-layout', BackendLayout);
@@ -117,7 +117,7 @@
     },
     // props: ['default'],
     components: {
-     LanguageSwipper,
+     LocaleChanger,
     },
     // mixin: [Mixins],
     methods: {
