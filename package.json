@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "node server.js",
     "build": "node build/build.js",
-    "heroku-postinstall": "npm install && npm run build"
+    "heroku-postinstall": "npm install && npm run build",
+    "start": "NODE_ENV=production node server.js -p $PORT"
   },
   "dependencies": {
     "axios": "^0.18.0",
