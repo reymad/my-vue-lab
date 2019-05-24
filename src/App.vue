@@ -5,7 +5,7 @@
       v-model="drawer"
       fixed
       app
-      dark
+      white
       v-if="this.$route.meta.layout!='none'"
     >
       <v-list dense>
@@ -36,6 +36,7 @@
         <v-btn flat class="info--text" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
         <v-btn flat class="success--text" to="/component1">component 1</v-btn>
         <v-btn flat class="warning--text" to="/apitest">Api test</v-btn>
+        <span><LocaleChanger /> </span>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -70,12 +71,9 @@
       </v-container>
     </v-content>
 
-
-    <v-footer color="white" height="60px" app>
-      &nbsp;<span class="">&copy; {{ year }}</span>
-      <v-spacer></v-spacer>
-      <span><LocaleChanger /> </span>
-      <br />
+    <v-footer color="default" height="auto" app>
+          &nbsp;<span class="">&copy; {{ year }}</span>
+          <v-spacer></v-spacer>
     </v-footer>
 
   </v-app>

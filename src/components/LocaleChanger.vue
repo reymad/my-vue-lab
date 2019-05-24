@@ -11,17 +11,19 @@
 </div>
 -->
 
-        <v-flex xs8 lg8>
+        <v-flex xs6 right>
 
-            <v-select
+            <v-select with="auto"
+            class="text--small"
             v-model="$i18n.locale"
             item-text="text"
             item-value="code"
             :items="langs"
             menu-props="auto"
             hide-details
-            prepend-icon="language"
             single-line
+            prepend-inner-icon="language"
+            hide-selected="true"
             @change="langChanged"           
             ></v-select>
 
@@ -36,8 +38,8 @@ export default {
   data () {
     return {
         langs: [
-            { code: 'en_us', text: 'English (US)' },
-            { code: 'es_es', text: 'Español (ES)' },
+            { code: 'en_us', text: 'English (us)' },
+            { code: 'es_es', text: 'Español (es)' },
         ]
     }
   },
