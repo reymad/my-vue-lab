@@ -71,7 +71,7 @@
     </v-content>
 
 
-    <v-footer color="default" height="60px" app>
+    <v-footer color="white" height="60px" app>
       &nbsp;<span class="">&copy; {{ year }}</span>
       <v-spacer></v-spacer>
       <span><LocaleChanger /> </span>
