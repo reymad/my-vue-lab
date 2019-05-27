@@ -29,13 +29,13 @@
     </v-navigation-drawer>
 
     <v-toolbar color="elevation-0 default" class="black--text" v-if="this.$route.meta.layout!='none'" fixed app>
-      <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title to="/">Application</v-toolbar-title>
+      <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"><v-icon>more_vert</v-icon></v-toolbar-side-icon>
+      <v-toolbar-title><router-link to="/" class="toolbar-title secondary--text"> {reymad} </router-link></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn flat class="info--text" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
-        <v-btn flat class="success--text" to="/component1">component 1</v-btn>
-        <v-btn flat class="warning--text" to="/apitest">Api test</v-btn>
+        <v-btn color="primary" depressed class="--no-rounded" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
+        <v-btn flat class="primary--text" to="/component1">component 1</v-btn>
+        <v-btn flat class="primary--text" to="/apitest">Api test</v-btn>
         <span><LocaleChanger /> </span>
       </v-toolbar-items>
     </v-toolbar>
@@ -150,5 +150,13 @@
 <style lang="css">
 html{
   overflow-y: auto; /* overwrite from vuetify styles */
+}
+.toolbar-title{
+    /*font-size: 150px; */
+    line-height: 150px;
+    /* font-weight: 700; */
+    color: #252932;
+    text-decoration: none !important;
+    text-shadow: rgba(61, 61, 61, 0.3) 1px 1px, rgba(61, 61, 61, 0.2) 1px 0px, rgba(61, 61, 61, 0.3) 1px 1px;
 }
 </style>

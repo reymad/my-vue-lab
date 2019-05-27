@@ -9,14 +9,16 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.use(Vuetify, {
     theme: {
-      primary: '#ee44aa',
+      primary: '#49c5b6',//'#cb3837',
       secondary: '#424242',
       accent: '#82B1FF',
       error: '#FF5252',
       info: '#2196F3',
       success: '#4CAF50',
-      warning: '#FF69B4',// '#FFC107'
-      custom: '#ffffff'
+      warning: '#FFC107',// '#FFC107'
+      custom: '#FF69B4',
+      white: '#ffffff',
+      black: '#666666',
     },
     customProperties: true,
     iconfont: 'md',

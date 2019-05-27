@@ -73,6 +73,11 @@ const toggleFullScreen = () => {
     }
 };
 
+const getClientIp = (request) => {
+  let ip = request.headers["X-Forwarded-For"] || request.connection.remoteAddress;
+  return ip;
+};
+
 export default {
     randomElement,
     toggleFullScreen,
@@ -80,5 +85,6 @@ export default {
     randomString,
     randomString,
     capitalize,
-    jesusTest
+    jesusTest,
+    getClientIp
 };

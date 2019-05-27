@@ -23,7 +23,7 @@
             hide-details
             single-line
             prepend-inner-icon="language"
-            hide-selected="true"
+            hide-selected
             @change="langChanged"           
             ></v-select>
 
