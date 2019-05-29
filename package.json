@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.20",
+    "express": "^4.17.0",
     "jquery": "^3.4.1",
     "material-design-icons-iconfont": "^5.0.1",
     "nprogress": "^0.2.0",
@@ -21,8 +23,7 @@
     "vue-router": "^3.0.1",
     "vue-toastr-2": "0.0.10",
     "vuetify": "^1.5.14",
-    "vuex": "^3.1.1",
-    "express": "^4.17.0"
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",
