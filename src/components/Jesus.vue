@@ -16,6 +16,9 @@
       <p>{{ $tc('test | tests' , 1) }}</p>
       <p>{{ $tc("This is a {count} | This are a {count} | This are a lot of {count}", 12 , { count: 12 } ) }}</p>
     </div>
+    <p>
+      <Provincias/>
+    </p>
   </div>
 </template>
 
@@ -23,6 +26,7 @@
 <script>
 
 import Util from '@/util';
+import Provincias from '@/components/provincias'
 
 export default {
   data () {
@@ -30,6 +34,9 @@ export default {
           title: 'Let\'s see what this is',
           text: 'Waiting...'
 	  }
+  },
+  components: {
+    Provincias,
   },
   methods:{
       jesusSalutes(){

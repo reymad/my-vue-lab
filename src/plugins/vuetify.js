@@ -22,6 +22,6 @@ Vue.use(Vuetify, {
     },
     customProperties: true,
     iconfont: 'md',
-    rtl: false,
+    rtl: false,// check main.js for >> Vue.prototype.$vuetify.rtl = rtl;
   })
   

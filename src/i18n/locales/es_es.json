@@ -8,5 +8,6 @@
     "apple": "No hay manzanas | Dos manzanas | {count} manzanas",
     "car": "Coche | Coches",
     "test | tests": "Prueba | Pruebas",
-    "This is a {count} | This are a {count} | This are a lot of {count}": "Esto es una {count} | Estos son unos {count} | Estos son un montón de {count}"
+    "This is a {count} | This are a {count} | This are a lot of {count}": "Esto es una {count} | Estos son unos {count} | Estos son un montón de {count}",
+    "Provincia changed to {0}": "Provincia cambiada a {0}"
 }
