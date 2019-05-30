@@ -4,11 +4,11 @@
     <a href="#" @click.prevent="jesusSalutes">Jesús component works!</a>
       <p>{{ text | toUpper | toUSD | truncate(5) }}</p>
     <br />
-    <v-btn primary flat @click="testGlobalEvent" > Test Global event</v-btn> 
+    <v-btn color="primary" flat @click="testGlobalEvent" > Test Global event</v-btn> 
     <br />
-    <v-btn success flat @click="handleFullScreen" > toggle full screen</b-button> 
+    <v-btn color="success" flat @click="handleFullScreen" > toggle full screen</v-btn> 
     <br />
-    <v-btn warning flat @click="kebab" > Kebab something and change... </v-btn> 
+    <v-btn color="warning" @click="kebab" > Kebab something and change... </v-btn> 
     <div>
       <p>Pluralization: </p>
       <p>{{ $tc('apple', 10, { count: 10 }) }}</p>

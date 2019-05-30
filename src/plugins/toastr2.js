@@ -11,7 +11,7 @@ Vue.use(VueToastr2, {
   timeout: 3000,
   extendedTimeOut: 6000,
   progressBar: true,
-  rtl: true,
+  rtl: false,
   escapeHtml : true,
   positionClass: 'toast-bottom-left'
 })
