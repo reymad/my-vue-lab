@@ -15,4 +15,4 @@ yarn-error.log*
 
 # My ignores
 README.ignore.md
-/server/
+src/server
