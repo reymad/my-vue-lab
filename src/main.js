@@ -9,6 +9,8 @@ import store from "./store";
 
 // Global filters registration
 import './shared/filters/index.js';
+// Directives
+import './shared/directives/index.js';
 // mixins
 import './shared/mixins/index.js';
 // Translations

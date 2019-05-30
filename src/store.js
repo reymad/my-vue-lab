@@ -8,3 +8,6 @@ export default new Vuex.Store({
   mutations: {},
   actions: {}
 });
+
+// ejemplo auth: https://pusher.com/tutorials/authentication-vue-vuex
+
