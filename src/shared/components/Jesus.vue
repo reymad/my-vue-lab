@@ -19,6 +19,11 @@
     <p>
       <SelectProvincias />
     </p>
+    <v-flex xs12 sm6 md3>
+          <v-text-field v-focus
+            label="Regular"
+          ></v-text-field>
+    </v-flex>
   </div>
 </template>
 
