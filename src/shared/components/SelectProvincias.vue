@@ -22,7 +22,7 @@
 
 <script>
 
-import Provincias from '@/data/provincias_es.js'
+import Provincias from '@/assets/data/provincias_es.js'
 
 console.info(Provincias.provincias_es)
 

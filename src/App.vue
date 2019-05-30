@@ -83,10 +83,10 @@
   // imports
   import Vue from 'vue'
   import AppEvents from  './event';
-  import BackendLayout from './layouts/backend';
-  import DefaultLayout from './layouts/default';
-  import NoneLayout from './layouts/none';
-  import LocaleChanger from '@/components/LocaleChanger';
+  import BackendLayout from './shared/layouts/backend';
+  import DefaultLayout from './shared/layouts/default';
+  import NoneLayout from './shared/layouts/none';
+  import LocaleChanger from '@/shared/components/LocaleChanger';
 
 
   Vue.component('backend-layout', BackendLayout);

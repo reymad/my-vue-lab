@@ -1,7 +1,7 @@
-import Hello from '@/components/Hello'
-import Jesus from '@/components/Jesus'
-import Comp1 from '@/components/component1/Comp1'
-import ApiTest from '@/components/Api'
+import Hello from '@/shared/components/Hello'
+import Jesus from '@/shared/components/Jesus'
+import Comp1 from '@/shared/components/component1/Comp1'
+import ApiTest from '@/shared/components/Api'
 
 export default [
   {

@@ -25,8 +25,8 @@
 
 <script>
 
-import Util from '@/util';
-import SelectProvincias from '@/components/SelectProvincias'
+import Util from '@/shared/util';
+import SelectProvincias from '@/shared/components/SelectProvincias'
 
 export default {
   data () {
