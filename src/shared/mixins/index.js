@@ -4,8 +4,8 @@ import Vue from 'vue';
 Vue.mixin({
     data: function() {
       return {
-        test: {
-            title: 'Soy el title',
+        mixinTest: {
+            title: '[from mixin] Soy el title',
         }
       }
     }
