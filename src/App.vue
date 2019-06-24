@@ -32,11 +32,11 @@
       <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"><v-icon>more_vert</v-icon></v-toolbar-side-icon>
       <v-toolbar-title><router-link to="/" class="toolbar-title secondary--text"> {{ appName }} </router-link></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn color="primary" depressed class="--no-rounded" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
-        <v-btn flat class="primary--text" to="/component1">component 1</v-btn>
-        <v-btn flat class="primary--text" to="/apitest">Api test</v-btn>
-        <span><LocaleChanger /> </span>
+      <v-toolbar-items right>
+        <v-btn flat color="success" class="--no-rounded" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
+        <v-btn flat color="primary" class="--no-rounded" to="/component1">component 1</v-btn>
+        <v-btn flat color="accent" class="--no-rounded" to="/apitest">Api test</v-btn>
+        <!--<span><LocaleChanger /> </span>-->
       </v-toolbar-items>
     </v-toolbar>
 
@@ -72,10 +72,13 @@
     </v-content>
 
     <v-footer color="default" height="auto" app>
-          &nbsp;<span class="">&copy; {{ appName }} {{ year }}</span>
-          <v-spacer></v-spacer>
-          <v-btn @click="localeChange" v-if="$i18n.locale!='en_us'" small color="primary" flat data-lang="en_us"><v-icon small color="primary">language</v-icon>&nbsp;english</v-btn>
-          <v-btn @click="localeChange" v-if="$i18n.locale!='es_es'" small color="primary" flat data-lang="es_es"><v-icon small color="primary">language</v-icon>&nbsp;español</v-btn>
+      &nbsp;<span class="">&copy; {{ appName }} {{ year }}</span>
+      <v-spacer></v-spacer>
+
+      <!--Locale changer-->
+      <v-btn v-on="on" @click="localeChange" v-if="$i18n.locale!='en_us'" small color="primary" flat data-lang="en_us"><v-icon small color="primary">language</v-icon>&nbsp;english</v-btn>
+      <v-btn v-on="on" @click="localeChange" v-if="$i18n.locale!='es_es'" small color="primary" flat data-lang="es_es"><v-icon small color="primary">language</v-icon>&nbsp;español</v-btn>
+     
     </v-footer>
 
   </v-app>
@@ -132,6 +135,7 @@
         let langcode = event.currentTarget.getAttribute('data-lang');
         // debugger;
         this.$i18n.locale = langcode;
+        this.$toastr.success(this.$t("Language changed", [this.$i18n.locale]))
         // alert(this.$i18n.locale);
         // this.$forceUpdate();// vue refresh ¿?
       }

@@ -9,5 +9,6 @@
     "car": "Coche | Coches",
     "test | tests": "Prueba | Pruebas",
     "This is a {count} | This are a {count} | This are a lot of {count}": "Esto es una {count} | Estos son unos {count} | Estos son un montón de {count}",
-    "Provincia changed to {0}": "Provincia cambiada a {0}"
+    "Provincia changed to {0}": "Provincia cambiada a {0}",
+    "Change language": "Cambiar idioma"
 }
