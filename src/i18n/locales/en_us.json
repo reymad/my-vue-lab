@@ -9,5 +9,5 @@
     "car": "Car | Cars",
     "test | tests": "Tests | Tests",
     "This is a {count} | This are a {count} | This are a lot of {count}": "This is a {count} | This are a {count} | This are a lot of {count}",
-    "Provincia changed to {0}": "Provincia changed to {0}"
+    "Provincia changed to {0}": "Province changed to {0}"
 }

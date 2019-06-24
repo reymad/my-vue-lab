@@ -25,7 +25,7 @@ Vue.config.productionTip = false
 import './plugins/toastr2.js'
 // Vuetify
 import './plugins/vuetify.js'
-// stylus
+// stylus ¡!overwrite here global css
 import './stylus/main.styl'
 
 /* eslint-disable no-new */
