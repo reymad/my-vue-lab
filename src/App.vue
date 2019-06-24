@@ -30,7 +30,7 @@
 
     <v-toolbar color="elevation-0 default" class="black--text" v-if="this.$route.meta.layout!='none'" fixed app>
       <v-toolbar-side-icon class="black--text" @click.stop="drawer = !drawer"><v-icon>more_vert</v-icon></v-toolbar-side-icon>
-      <v-toolbar-title><router-link to="/" class="toolbar-title secondary--text"> {reymad} </router-link></v-toolbar-title>
+      <v-toolbar-title><router-link to="/" class="toolbar-title secondary--text"> {{ appName }} </router-link></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn color="primary" depressed class="--no-rounded" to="/jesus">{{ $t("hello", ["Jesús"]) }}</v-btn>
@@ -72,8 +72,10 @@
     </v-content>
 
     <v-footer color="default" height="auto" app>
-          &nbsp;<span class="">&copy; {{ year }}</span>
+          &nbsp;<span class="">&copy; {{ appName }} {{ year }}</span>
           <v-spacer></v-spacer>
+          <v-btn @click="localeChange" v-if="$i18n.locale!='en_us'" small color="primary" flat data-lang="en_us"><v-icon small color="primary">language</v-icon>&nbsp;english</v-btn>
+          <v-btn @click="localeChange" v-if="$i18n.locale!='es_es'" small color="primary" flat data-lang="es_es"><v-icon small color="primary">language</v-icon>&nbsp;español</v-btn>
     </v-footer>
 
   </v-app>
@@ -108,6 +110,7 @@
     name: 'app',
     data () {
       return {
+        appName: "Reymad",
         user: null,
         drawer: false,
         year: new Date().getFullYear(),
@@ -125,6 +128,13 @@
       async logout () {
 
       },
+      localeChange($event) {
+        let langcode = event.currentTarget.getAttribute('data-lang');
+        // debugger;
+        this.$i18n.locale = langcode;
+        // alert(this.$i18n.locale);
+        // this.$forceUpdate();// vue refresh ¿?
+      }
     },
     // implantacion de eventos the app
     created () {
@@ -137,10 +147,14 @@
       }
 
     },
+    mounted() {
+      // alert(this.$i18n.locale);
+    },
     computed: {
       // see: https://itnext.io/anyway-heres-how-to-create-a-multiple-layout-system-with-vue-and-vue-router-b379baa91a05
       layout() {
         return ( (this.$route.meta.layout) || default_layout) + '-layout';
+
       }
     }
   }

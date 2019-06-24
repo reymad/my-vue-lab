@@ -28,6 +28,17 @@ import './plugins/vuetify.js'
 // stylus ¡!overwrite here global css
 import './stylus/main.styl'
 
+
+Object.defineProperty(Vue.prototype, '$locale', {
+  get: function () {
+    return app.i18n.locale
+  },
+  set: function (locale) {
+    app.i18n.locale = locale
+  }
+})
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
