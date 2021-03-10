@@ -14,7 +14,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.20",
     "express": "^4.17.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-design-icons-iconfont": "^5.0.1",
     "nprogress": "^0.2.0",
     "toastr": "^2.1.4",
